@@ -17,6 +17,12 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /opt
 
+# Ghidra 11.3.1 설치
+RUN wget -O ghidra.zip \
+    https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.3.1_build/ghidra_11.3.1_PUBLIC_20250219.zip \
+    && unzip ghidra.zip \
+    && rm ghidra.zip
+
 COPY start-gui.sh /usr/local/bin/start-gui.sh
 RUN chmod +x /usr/local/bin/start-gui.sh
 

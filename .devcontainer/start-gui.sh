@@ -35,6 +35,16 @@ vncserver :1 \
     -depth 24 \
     -localhost
 
+# XFCE가 시작될 때까지 대기
+sleep 5
+
+# Google Chrome 실행
+DISPLAY=:1 google-chrome \
+    --no-sandbox \
+    --disable-dev-shm-usage \
+    --disable-gpu \
+    > /tmp/chrome.log 2>&1 &
+
 # noVNC 웹 서버 시작
 websockify \
     --web=/usr/share/novnc \
