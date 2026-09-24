@@ -1,0 +1,8 @@
+{
+  "name": "Ghidra GUI",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [6080],
+  "remoteUser": "vscode"
+}
